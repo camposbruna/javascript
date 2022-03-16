@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nascionalidade</title>
+  <style>
+    body {
+      background: lightgray;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px 20px;      
+    }
+  </style>
+  
+ </head>
+<body>
+  <h1>Identificador de Nascionalidade</h1>
+  <p>Informe o seu país de origem:</p> <br>
+  <input type="text" value="" id="txtp">
+  <input type="button" value="Verificar" id="verificar" onclick="verificar()">
+  <div id="res">
+
+  </div>
+ 
+  <script>
+    function verificar() {
+      var país = document.querySelector('input#txtp')
+      var res = document.querySelector('div#res')
+      var nascionalidade = String(país.value)
+      
+      res.innerHTML = `<p>Seu país de origem é <strong>${nascionalidade}</strong></p>`
+
+      if (nascionalidade == 'Brasil') {
+        res.innerHTML += `<p>Sua nascionalidade é <strong>Brasileira</strong>!</p>`
+      } else {
+        res.innerHTML += `<p>Você nasceu em <strong>${nascionalidade}</strong>, você é estrangeiro.</p>`
+      }
+    }
+  </script>
+   
+</body>
+</html>
